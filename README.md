@@ -21,12 +21,17 @@ OnePHP               WEB部署根目录
 ```
 
 ## 使用
+
 1.克隆代码
+
 ```
 git clone https://github.com/SenCaoKing/OnePHP-Framework
 ```
 
-2. 创建名为 todo 的数据库，并插入两条记录，命令：
+2.创建数据库 
+
+创建名为 todo 的数据库，并插入两条记录，命令：
+
 ```
 CREATE DATABASE IF NOT EXISTS `todo`;
     USE `todo`;
@@ -44,7 +49,9 @@ CREATE DATABASE IF NOT EXISTS `todo`;
 
 
 3.修改配置文件
+
 打开配置文件 config/config.php ，使之与自己的数据库匹配
+
 ```
 define('DB_NAME', 'todo');
 define('DB_USER', 'root');
@@ -53,8 +60,13 @@ define('DB_HOST', 'localhost');
 ```
     
 4.测试访问
+
 打开 index.php 文件，修改
+
 ```
 define('APP_URL', 'http://localhost/onephp');
 ```
-为自己方式代码的具体位置，默认是localhost的onephp目录下，然后就可以访问 http://localhost/onephp
+
+为自己方式代码的具体位置，默认是localhost的onephp目录下。
+
+然后就可以访问 http://localhost/onephp
