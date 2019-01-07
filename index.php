@@ -4,7 +4,7 @@
 define('APP_PATH', __DIR__ . '/');
 
 // 开启调试模式
-define('APP_DEBUG', true);
+define('APP_DEBUG', false);
 
 // 加载框架文件
 require(APP_PATH . 'onephp/Onephp.php');

@@ -6,7 +6,7 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
 
-    # 如果访问的文件或目录不是真实存在，分发请求至 index.php
-    RewriteRule . index.php
+    # 重定向所有请求到 index.php?url=PATHNAME
+    RewriteRule ^(.*)$ index.php?url=$1 [PT,L]
 </IfModule>
 

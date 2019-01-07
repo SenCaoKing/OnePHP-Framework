@@ -14,7 +14,7 @@ const EXT = '.class.php';
 require APP_PATH . 'config/config.php';
 
 // 包含核心框架类
-require ROOT . 'Onephp.php';
+require ROOT . 'One.php';
 
 // 实例化核心类
 $one = new One;
