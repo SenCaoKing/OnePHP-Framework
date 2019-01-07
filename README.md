@@ -22,13 +22,13 @@ OnePHP               WEB部署根目录
 
 ## 使用
 
-1.克隆代码
+### 1.克隆代码
 
 ```
 git clone https://github.com/SenCaoKing/OnePHP-Framework
 ```
 
-2.创建数据库 
+### 2.创建数据库 
 
 创建名为 todo 的数据库，并插入两条记录，命令：
 
@@ -48,7 +48,7 @@ CREATE DATABASE IF NOT EXISTS `todo`;
 ```
 
 
-3.修改配置文件
+### 3.修改配置文件
 
 打开配置文件 config/config.php ，使之与自己的数据库匹配
 
@@ -59,7 +59,7 @@ define('DB_PASSWORD', 'root');
 define('DB_HOST', 'localhost');
 ```
     
-4.测试访问
+### 4.测试访问
 
 打开 index.php 文件，修改
 
