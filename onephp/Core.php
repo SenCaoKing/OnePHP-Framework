@@ -48,6 +48,7 @@ class One {
         }
     }
 
+
     // 检测开发环境
     function setReporting() {
         if (APP_DEBUG == true) {
