@@ -39,5 +39,5 @@ class ItemController extends Controller {
         $this->set('title', '删除成功');
         $this->set('todo', $item->delete($id));
     }
-    
+
 }
