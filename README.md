@@ -6,7 +6,7 @@ A Framework of PHP
 - 目录准备(2018/06/08)
 ```
 OnePHP               WEB部署根目录
-|--app               应用目录
+|--application               应用目录
 |  |--controllers    控制器目录
 |  |--models         模块目录
 |  |--views          视图目录
