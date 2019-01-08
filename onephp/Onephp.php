@@ -14,5 +14,5 @@ require APP_PATH . 'config/config.php';
 require FRAME_PATH . 'Core.php';
 
 // 实例化核心类
-$one = new One;
+$one = new Core;
 $one->run();

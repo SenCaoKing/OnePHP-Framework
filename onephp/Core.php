@@ -2,7 +2,7 @@
 /**
  * OnePHP核心框架
  */
-class One
+class Core
 {
     // 运行程序
     function run()
@@ -11,11 +11,11 @@ class One
         $this->setReporting();
         $this->removeMagicQuotes();
         $this->unregisterGlobals();
-        $this->callHook();
+        $this->Route();
     }
 
-    // 主请求方法，主要目的是拆分URL请求
-    function callHook()
+    // 路由处理
+    function Route()
     {
         $controllerName = 'Index';
         $action = 'index';
