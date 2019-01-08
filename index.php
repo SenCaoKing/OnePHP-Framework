@@ -10,4 +10,4 @@ define('APP_DEBUG', true);
 define('APP_URL', 'http://www.onephp.test');
 
 // 加载框架文件
-require 'onephp/Onephp.php';
+require './onephp/Onephp.php';
