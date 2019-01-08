@@ -7,7 +7,7 @@ define('APP_PATH', __DIR__ . '/');
 define('APP_DEBUG', true);
 
 // 网站根URL
-define('APP_URL', 'http://localhost/onephp');
+define('APP_URL', 'http://www.onephp.test');
 
 // 加载框架文件
 require 'onephp/Onephp.php';

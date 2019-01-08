@@ -9,8 +9,8 @@ A Framework of PHP
 
 - 目录准备(2018/06/08)
 ```
-OnePHP               WEB部署根目录
-|--application               应用目录
+project              WEB部署根目录
+|--application       应用目录
 |  |--controllers    控制器目录
 |  |--models         模块目录
 |  |--views          视图目录
@@ -19,6 +19,10 @@ OnePHP               WEB部署根目录
 |  |--base           MVC基类目录
 |  |--db             数据库操作类目录
 |  |--Onephp.php     内核文件
+|--runtime           运行目录
+|  |--caches         缓存文目录
+|  |--logs           日志目录
+|  |--sessions       缓存目录
 |--static            静态文件目录
 |--index.php         入口文件
 
@@ -68,9 +72,9 @@ define('DB_HOST', 'localhost');
 打开 index.php 文件，修改
 
 ```
-define('APP_URL', 'http://localhost/onephp');
+define('APP_URL', 'http://localhost/project');
 ```
 
-为自己方式代码的具体位置，默认是localhost的onephp目录下。
+为自己代码的具体位置，默认是localhost的project目录下。
 
-然后就可以访问 http://localhost/onephp
+然后就可以访问 http://localhost/project/

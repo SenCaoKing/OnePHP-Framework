@@ -3,7 +3,7 @@
 
     # 如果访问的文件存在，则直接访问，不重定向
     RewriteCond %{REQUEST_FILENAME} !-f
-    # 如果访问的目录存在，则直接访问，不重定向
+    # 如果访问的目录存在，则直接访问，不重4 定向
     RewriteCond %{REQUEST_FILENAME} !-d
 
     # 如果访问的文件或目录不存在，则重定向所有请求
