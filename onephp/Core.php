@@ -1,6 +1,6 @@
 <?php
 /**
- * OnePHP核心框架
+ * OnePHP框架核心
  */
 class Core
 {
@@ -116,7 +116,7 @@ class Core
             // 加载应用模型类
             include $models;
         } else {
-            /* 错误代码 */
+            // 错误代码
         }
     }
 }
