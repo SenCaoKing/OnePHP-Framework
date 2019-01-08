@@ -3,6 +3,10 @@ A Framework of PHP
 
 [开发记录]
 
+### 要求
+
+* PHP 5.4.0+
+
 - 目录准备(2018/06/08)
 ```
 OnePHP               WEB部署根目录
