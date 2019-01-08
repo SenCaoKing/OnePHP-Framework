@@ -3,4 +3,4 @@
 <br />
 <br />
 
-<a href="<?php echo APP_URL?>/item/index/">item增删改查</a>
+<a href="<?php echo APP_URL ?>/item/index">增删改查示例</a>
