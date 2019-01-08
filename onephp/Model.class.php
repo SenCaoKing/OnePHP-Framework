@@ -1,23 +1,25 @@
 <?php
 
-class Model extends Sql {
+class Model extends Sql
+{
     protected $_model;
     protected $_table;
 
-    function __construct() {
+    function __construct()
+    {
         // 连接数据库
         $this->connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-
-        // 获取对象所属类的名称
+        // 获取模型类名
         $this->_model = get_class($this);
-        // $this->_model = rtrim($this->_model, 'Model');
+        // 删除类名最后的 Model 字符
         $this->_model = substr($this->_model, 0, -5);
 
         // 数据库表名与类名一致
         $this->_table = strtolower($this->_model);
     }
 
-    function __destruct() {
+    function __destruct()
+    {
     }
 }
