@@ -14,15 +14,13 @@ class View
         $this->_action = $action;
     }
 
-    /** 设置变量方法 **/
-
-    function set($name, $value)
+    /** 分配变量 **/
+    function assign($name, $value)
     {
         $this->variables[$name] = $value;
     }
 
-    /** 显示 **/
-
+    /** 渲染显示 **/
     function render()
     {
         extract($this->variables);
@@ -48,5 +46,4 @@ class View
             include ($defaultFooter);
         }
     }
-
 }

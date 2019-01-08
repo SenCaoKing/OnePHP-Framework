@@ -16,11 +16,13 @@ class Controller
         $this->_view = new View($controller, $action);
     }
 
-    function set($name, $value)
+    // 分配变量
+    function assign($name, $value)
     {
-        $this->_view->set($name, $value);
+        $this->_view->assign($name, $value);
     }
 
+    // 渲染视图
     function __destruct()
     {
         $this->_view->render();
