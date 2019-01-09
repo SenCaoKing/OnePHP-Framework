@@ -97,12 +97,4 @@ location / {
     
 ### 5.测试访问
 
-打开 index.php 文件，修改
-
-```
-define('APP_URL', 'http://localhost/project');
-```
-
-为自己代码的具体位置，默认是localhost的project目录下。
-
-然后就可以访问 http://localhost/project/
+然后就可以访问 http://localhost/
