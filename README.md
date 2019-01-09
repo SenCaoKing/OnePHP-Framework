@@ -1,5 +1,7 @@
 # OnePHP-Framework
-A Framework of PHP
+
+## 简述
+**OnePHP**是一款简单的PHP MVC框架。
 
 [开发记录]
 
@@ -9,7 +11,7 @@ A Framework of PHP
 
 - 目录准备(2018/06/08)
 ```
-project              WEB部署根目录
+project              根目录
 |--application       应用目录
 |  |--controllers    控制器目录
 |  |--models         模块目录
@@ -68,26 +70,24 @@ $config['db']['dbname'] = 'todo';
 ```
 
 ### 4.配置Nginx或Apache
-Apache：
+在Apache或Nginx中创建一个站点，把 project 设置为站点根目录（入口文件 index.php 所在的目录）。
+
+然后设置单一入口，Apache服务器配置：
 ```
 <IfModule mod_rewrite.c>
+    # 打开Rewrite功能
     RewriteEngine On
 
-    # 如果访问的文件存在，则直接访问，不重定向
+    # 如果请求的是真实存在的文件或目录，直接访问
     RewriteCond %{REQUEST_FILENAME} !-f
-    # 如果访问的目录存在，则直接访问，不重4 定向
     RewriteCond %{REQUEST_FILENAME} !-d
 
-    # 如果访问的文件或目录不存在，则重定向所有请求
-    # 到：index.php?url=<PARAMS>。
-    # 例如：当我们请求<域名>item/index时，实际上是
-    # 请求<域名>index.php?url=item/index，在PHP中
-    # 用 GET['url'] 就能拿到字符串item/index
-    RewriteRule ^(.*)$ index.php?url=$1 [PT,L]
+    # 如果访问的文件或目录不是真实存在，分发请求至 index.php
+    RewriteRule . index.php
 </IfModule>
 ```
 
-Nginx:
+Nginx服务器配置:
 ```
 location / {
     # 重新向所有非真实存在的请求到index.php
@@ -97,4 +97,4 @@ location / {
     
 ### 5.测试访问
 
-然后就可以访问 http://localhost/
+然后访问站点域名：http://localhost/ 就可以了。

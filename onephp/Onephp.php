@@ -134,7 +134,7 @@ class Onephp
     // 自动加载控制器和模型类
     public static function loadClass($class)
     {
-        $frameworks = __DIR__ . $class . '.php';
+        $frameworks = __DIR__ . '/' . $class . '.php';
         $controllers = APP_PATH . 'application/controllers/' . $class . '.php';
         $models = APP_PATH . 'application/models/' . $class . '.php';
 
