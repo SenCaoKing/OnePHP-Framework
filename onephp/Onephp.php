@@ -127,7 +127,7 @@ class Onephp
     public function setDbConfig()
     {
         if ($this->_config['db']) {
-            Model::$dbConfig = $this->_config['db'];
+            Model::setDbConfig($this->_config['db']);
         }
     }
 
