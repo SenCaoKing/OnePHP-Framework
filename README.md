@@ -61,13 +61,41 @@ CREATE DATABASE IF NOT EXISTS `todo`;
 打开配置文件 config/config.php ，使之与自己的数据库匹配
 
 ```
-define('DB_NAME', 'todo');
-define('DB_USER', 'root');
-define('DB_PASSWORD', 'root');
-define('DB_HOST', 'localhost');
+$config['db']['host'] = 'localhost';
+$config['db']['username'] = 'root';
+$config['db']['password'] = 'root';
+$config['db']['dbname'] = 'todo';
+```
+
+### 4.配置Nginx或Apache
+Apache：
+```
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 如果访问的文件存在，则直接访问，不重定向
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # 如果访问的目录存在，则直接访问，不重4 定向
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # 如果访问的文件或目录不存在，则重定向所有请求
+    # 到：index.php?url=<PARAMS>。
+    # 例如：当我们请求<域名>item/index时，实际上是
+    # 请求<域名>index.php?url=item/index，在PHP中
+    # 用 GET['url'] 就能拿到字符串item/index
+    RewriteRule ^(.*)$ index.php?url=$1 [PT,L]
+</IfModule>
+```
+
+Nginx:
+```
+location / {
+    # 重新向所有非真实存在的请求到index.php
+    try_files $uri $uri/ /index.php$args;
+}
 ```
     
-### 4.测试访问
+### 5.测试访问
 
 打开 index.php 文件，修改
 
