@@ -1,4 +1,7 @@
 <?php
+namespace onephp\db;
+
+use \PDOStatement;
 
 class Sql
 {
@@ -47,7 +50,7 @@ class Sql
     public function order($order = array())
     {
         if ($order) {
-            $this->filter .= 'ORDER BY ';
+            $this->filter .= ' ORDER BY ';
             $this->filter .= implode(',', $order);
         }
 

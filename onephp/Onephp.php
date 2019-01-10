@@ -1,9 +1,16 @@
 <?php
+
+namespace onephp;
+
+// 框架根目录
+defined('CORE_PATH') or define('CORE_PATH', __DIR__);
+
 /**
- * OnePHP框架核心
+ * onephp框架核心
  */
 class Onephp
 {
+    // 配置内容
     protected $config = [];
 
     public function __construct($config)
@@ -55,7 +62,7 @@ class Onephp
         }
 
         // 判断控制器和操作是否存在
-        $controller = $controllerName . 'Controller';
+        $controller = 'app\\controllers\\' . $controllerName . 'Controller';
         if (!class_exists($controller)) {
             exit($controller . '控制器不存在');
         }
@@ -134,24 +141,46 @@ class Onephp
         }
     }
 
-    // 自动加载控制器和模型类
-    public static function loadClass($class)
+    // 自动加载类
+    public static function loadClass($className)
     {
-        $frameworks = __DIR__ . '/' . $class . '.php';
-        $controllers = APP_PATH . 'application/controllers/' . $class . '.php';
-        $models = APP_PATH . 'application/models/' . $class . '.php';
+        $classMap = [
+            'onephp\base\Controller' => CORE_PATH . '/base/Controller.php',
+            'onephp\base\Model' => CORE_PATH . '/base/Model.php',
+            'onephp\base\View' => CORE_PATH . '/base/View.php',
+            'onephp\db\Db' => CORE_PATH . '/db/Db.php',
+            'onephp\db\Sql' => CORE_PATH . '/db/Sql.php',
+        ];
 
-        if (file_exists($frameworks)) {
-            // 加载框架核心类
-            include $frameworks;
-        } elseif (file_exists($controllers)) {
-            // 加载应用控制器类
-            include $controllers;
-        } elseif (file_exists($models)) {
-            // 加载应用模型类
-            include $models;
+        // $classMap = $this->classMap();
+
+        if (isset($classMap[$className])) {
+            // 包含内核文件
+            $file = $classMap[$className];
+        } elseif (strpos($className, '\\') !== false) {
+            // 包含应用 (application 目录) 文件
+            $file = APP_PATH . str_replace('\\', '/', $className) . '.php';
+            if (!is_file($file)) {
+                return;
+            }
         } else {
-            // 错误代码
+            return;
         }
+
+        include $file;
+
+        // 这里可以加入判断，如果名为$className的类、接口或者性状不存在，则在调式模式下抛出错误
+    }
+
+    // 内核文件命名空间映射关系
+    protected function classMap()
+    {
+        return [
+            'onephp\base\Controller' => CORE_PATH . '/base/Controller.php',
+            'onephp\base\Model' => CORE_PATH . '/base/Model.php',
+            'onephp\base\View' => CORE_PATH . '/base/View.php',
+            'onephp\db\Db' => CORE_PATH . '/db/Db.php',
+            'onephp\db\Sql' => CORE_PATH . '/db/Sql.php',
+        ];
     }
 }

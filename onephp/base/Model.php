@@ -1,4 +1,7 @@
 <?php
+namespace onephp\base;
+
+use onephp\db\Sql;
 
 class Model extends Sql
 {

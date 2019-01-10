@@ -1,4 +1,8 @@
 <?php
+namespace onephp\db;
+
+use PDO;
+use PDOException;
 
 /**
  * 数据库操作类。

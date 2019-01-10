@@ -1,4 +1,6 @@
 <?php
+namespace onephp\base;
+
 /**
  * 控制器基类
  */

@@ -1,4 +1,8 @@
 <?php
+namespace app\models;
+
+use onephp\base\Model;
+use onephp\db\Db;
 
 /**
  * 用户Model

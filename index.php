@@ -12,4 +12,4 @@ require(APP_PATH . 'onephp/Onephp.php');
 $config = require(APP_PATH . 'config/config.php');
 
 // 实例化框架类
-(new Onephp($config))->run();
+(new onephp\Onephp($config))->run();
