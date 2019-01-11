@@ -1,5 +1,13 @@
 {
-    "name": "sen/one-php",
+    "name": "SenCaoKing/one-php",
+    "description": "Simple and lightweight PHP framework",
+    "type": "project",
+    "keywords": [
+        "framework",
+        "OnePHP",
+        "mvc"
+    ],
+    "license": "MIT",
     "authors": [
         {
             "name": "SenCaoKing",
