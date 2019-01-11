@@ -7,7 +7,7 @@ use onephp\db\Db;
 /**
  * 用户Model
  */
-class ItemModel extends Model
+class Item extends Model
 {
     /**
      * 自定义当前模型操作的数据库表名称，
